@@ -4,6 +4,7 @@ RUN mkdir /app
 WORKDIR /app
 
 ADD dmdd-agent /app
+RUN chmod +x dmdd-agent
 
 ENTRYPOINT []
 CMD []
