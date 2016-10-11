@@ -6,4 +6,4 @@ WORKDIR /app
 ADD dmdd-agent /app
 
 ENTRYPOINT []
-CMD ["dmdd-agent"]
+CMD ["./dmdd-agent"]
