@@ -12,7 +12,7 @@ install:
   - go get github.com/gocraft/web
 
 after_success:
-  - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.7.1-onbuild
+  - docker run --rm -v "$PWD":/go/src/app golang:1.7.1-onbuild
   - docker build -t jcombee/dmdd-agent:"$TRAVIS_TAG" .
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push jcombee/dmdd-agent:"$TRAVIS_TAG"
