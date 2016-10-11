@@ -5,13 +5,11 @@ services:
 
 before_install:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker pull golang:1.7;
-    docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.7 go build -v;
+    docker pull golang:1.7.1-onbuild;
+    docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.7.1-onbuild;
     docker build -t jcombee/dmdd-agent:$TRAVIS_TAG .;
-    fi
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push jcombee/dmdd-agent;
-    fi
+    docker push jcombee/dmdd-agent:$TRAVIS_TAG;
