@@ -5,4 +5,4 @@ WORKDIR /app
 
 ADD ./dmdd-agent /app/dmdd-agent
 
-ENTRYPOINT ["dmdd-agent"]
+ENTRYPOINT ["./dmdd-agent"]
