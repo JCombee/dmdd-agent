@@ -1,4 +1,4 @@
-FROM docker:1.12.1
+FROM docker:1.12.1-dind
 
 RUN mkdir /app
 WORKDIR /app
@@ -6,4 +6,4 @@ WORKDIR /app
 ADD dmdd-agent /app
 
 ENTRYPOINT []
-CMD ["./dmdd-agent"]
+CMD []
