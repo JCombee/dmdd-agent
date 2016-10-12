@@ -6,3 +6,4 @@ WORKDIR /app
 ADD app /app
 
 ENTRYPOINT ["./app"]
+CMD ["true"]
