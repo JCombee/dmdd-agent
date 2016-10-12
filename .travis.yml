@@ -12,7 +12,7 @@ install:
   - go get github.com/gocraft/web
 
 script:
-  - go build
+  - docker run -v "$PWD":/go -w /go golang:1.7-alpine ./make.sh
 
 after_success:
   - docker build -t jcombee/dmdd-agent:"$TRAVIS_TAG" .

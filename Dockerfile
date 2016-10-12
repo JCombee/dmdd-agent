@@ -4,6 +4,5 @@ RUN mkdir /app
 WORKDIR /app
 
 ADD dmdd-agent /app
-RUN dos2unix dmdd-agent
 
-CMD ["./dmdd-agent"]
+ENTRYPOINT ["./dmdd-agent"]
